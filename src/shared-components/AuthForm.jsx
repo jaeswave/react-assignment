@@ -1,10 +1,12 @@
 import Button from "../shared-components/Button";
-
+import { Link } from "react-router-dom";
+import {APPLINK} from '../utils'
 const AuthForm = (prop) => {
-  const { formType, onSubmit, onChange, passwordType, onClick, showEye } = prop;
+  const { formType, onSubmit, onChange, passwordType, onClick, showEye, error } = prop;
   return (
     <>
-      {formType === "login" && (
+      {
+      formType === "login" && (
         <div className="auth-container">
           <div className="auth-box">
             <h2>Welcome back</h2>
@@ -37,21 +39,22 @@ const AuthForm = (prop) => {
                 <label>
                   <input type="checkbox" /> Remember me
                 </label>
-                <a href="/">Forgot password?</a>
+                <Link to={APPLINK.START_FORGET_PASSWORD[0]}>Forgot password? </Link>
               </div>
-              <Button type="submit" identity="auth-button" onClick={onSubmit} />
+              <Button identity="auth-button" onClick={onSubmit} />
               <p className="form-footer">
-                Don’t have an account? <a href="/">Sign Up</a>
+                Don’t have an account? <Link to={APPLINK.SIGNUP[0]}>Sign Up</Link>
               </p>
             </form>
           </div>
         </div>
       )}
-      {formType === "signUp" && (
+      {
+       formType === "signUp" && (
         <div className="signup-container">
           <div className="signup-box">
             <h2>Sign up</h2>
-            <p>Welcome! Let's get started on your journey.</p>
+            <p>Welcome! Lets get started on your journey.</p>
 
             <div className="step-indicator">
               <span className="step-title">Account Information</span>
@@ -63,11 +66,13 @@ const AuthForm = (prop) => {
                 <label>First Name</label>
                 <input
                   type="text"
-                  name="firsName"
+                  name="firstName"
                   id="firstName"
                   placeholder="John"
                   onChange={onChange}
                 />
+
+              <span style={{color:'red'}}>{error.firstName}</span>
               </div>
 
               <div className="form-group">
@@ -79,6 +84,7 @@ const AuthForm = (prop) => {
                   placeholder="Doe"
                   onChange={onChange}
                 />
+                <span style={{color:'red'}}>{error.lastName}</span>
               </div>
 
               <div className="form-group">
@@ -90,6 +96,7 @@ const AuthForm = (prop) => {
                   placeholder="johndoe@gmail.com"
                   onChange={onChange}
                 />
+                <span style={{color:'red'}}>{error.email}</span>
               </div>
 
               <div className="form-group">
@@ -101,6 +108,7 @@ const AuthForm = (prop) => {
                   placeholder="08123456789"
                   onChange={onChange}
                 />
+                <span style={{color:'red'}}>{error.phoneNumber}</span>
               </div>
 
               <div className="form-buttons">
@@ -115,7 +123,7 @@ const AuthForm = (prop) => {
             </form>
 
             <p className="form-footer">
-              Already have an account? <a href="/">Sign in</a>
+              Already have an account? <Link to={APPLINK.LOGIN[0]}>Sign in</Link>
             </p>
           </div>
         </div>

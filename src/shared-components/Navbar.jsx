@@ -1,7 +1,8 @@
 import "../css/index.css";
 import logos from "../assets/navbarimages/logo.svg";
 import Button from "./Button";
-
+import { Link } from 'react-router-dom'
+import { APPLINK } from '../utils'
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -10,30 +11,32 @@ const Navbar = () => {
       </div>
       <ul className="nav-links">
         <li>
-          <a href="#Home">Home</a>
+          <Link to="#Home">Home</Link>
         </li>
         <li>
-          <a href="#about">About</a>
+          <Link to="#about">About</Link>
         </li>
         <li>
-          <a href="#services">Services</a>
+          <Link to="#services">Services</Link>
         </li>
         <li>
-          <a href="#faq">FAQ</a>
+          <Link to="#faq">FAQ</Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link to="#contact">Contact</Link>
         </li>
         <li>
-          <a href="#blog">Blog</a>
+          <Link href="#blog">Blog</Link>
         </li>
         <li>
-          <a href="#recommendation">Recommendation</a>
+          <Link href="#recommendation">Recommendation</Link>
         </li>
       </ul>
       <div className="nav-buttons">
-        <Button text={"Log in"} btn_type={"login"} />
-        <Button text={"Get Started"} btn_type={"getstarted"} />
+        {/* <Button text={"Log in"} btn_type={"login"} isLink={true}onClick={onClick}/> */}
+        <Link to={APPLINK.LOGIN[0]}> <button>Login</button> </Link> 
+        <Link to={APPLINK.SIGNUP[0]}> <button>Signup</button> </Link> 
+        {/* <Button text={"Get Started"} btn_type={"getstarted"} /> */}
       </div>
     </nav>
   );

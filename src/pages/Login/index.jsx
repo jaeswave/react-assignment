@@ -1,10 +1,14 @@
-import "../../../css/Login.css";
+import "../../css/Login.css";
 import { useState } from "react";
-import loginBg from "../../../assets/login.png";
-import AuthForm from "../../../shared-components/AuthForm";
+import loginBg from "../../assets/login.png";
+import AuthForm from "../../shared-components/AuthForm";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import { APPLINK } from "../../utils";
 
 const LoginPage = () => {
+  const Navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
 
   const [data, setData] = useState({
@@ -23,9 +27,12 @@ const LoginPage = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (data.email.trim() === "" || data.password.trim() === "") {
-      alert("Please fill out all fields");
+     toast.error("Please fill out all fields");
       return;
     }
+
+    toast.success("Succefully Logged-in")
+    Navigate(APPLINK.HOMEPAGE[0])
   }
 
   return (
