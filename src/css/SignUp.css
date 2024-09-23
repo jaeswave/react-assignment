@@ -1,0 +1,102 @@
+.signup-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100vh;
+  margin-right:100px;
+}
+
+.signup-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  height: fit;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.step-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-buttons {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 20px;
+}
+
+.back-button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #888;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  border-color: #777;
+}
+
+.continue-button {
+  background-color: #00a651;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.continue-button:hover {
+  background-color: #007a3b;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #555;
+}
+
+.form-footer a {
+  color: #00a651;
+  text-decoration: none;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}

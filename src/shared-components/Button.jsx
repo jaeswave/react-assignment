@@ -1,7 +1,7 @@
 import "../css/index.css";
 
 const Button = (prop) => {
-  const { text, btn_type, style } = prop;
+  const { text, btn_type, style, identity } = prop;
   return btn_type == "login" ? (
     <button className="login-btn" style={style}>
       {text}
@@ -11,7 +11,7 @@ const Button = (prop) => {
       {text}
     </button>
   ) : (
-    <button className="default-btn" style={style}>
+    <button className={identity} style={style}>
       {text}
     </button>
   );

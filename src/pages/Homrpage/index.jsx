@@ -7,21 +7,31 @@ import GetStarted from './components/GetStarted'
 import ContactSection from "./components/ContactSection";
 import Footer from "../../shared-components/Footer";
 
+import Auth from '../Auth'
+
 const Homepage = () => {
   return (
-    <>
-      <Navbar />
-      <Hero />
-      <KeyFeatures />
-      <SectionThree />
-      <Faq />
-      <GetStarted />
-      <ContactSection />
-      <Footer />
+    // <>
+    //   <Navbar />
+    //   <Hero />
+    //   <KeyFeatures />
+    //   <SectionThree />
+    //   <Faq />
+    //   <GetStarted />
+    //   <ContactSection />
+    //   <Footer />
+      <Auth/>
       
 
-    </>
+    // </>
   );
 };
 
 export default Homepage;
+
+
+
+
+
+
+
